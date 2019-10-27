@@ -1,0 +1,88 @@
+body {
+  background-color: orange;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  height: 241px;
+  width: 700px;
+  padding: 24px;;
+  border-radius: 2% 2% 0 0;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+a {
+  display: block;
+}
+
+div.col1 {
+  width: 10%;
+}
+div.col2 {
+  width: 15%;
+
+  span {
+    display: block;  
+  }
+}
+
+div.col3 {
+  width: 63%;
+  justify-content: flex-end;
+}
+
+div.col4 {
+  width: 7%;
+  justify-content: flex-end;
+}
+
+.col1, .col2, .col3, .col4 {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  width: 28%;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.follow {
+  border-radius: 35%;
+  border: 1px solid skyblue;
+  padding: 8px;
+}
+
+.TweetTextSize {
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: .01em;
+}
+
+.js-display-url {
+  color: lightskyblue;
+  cursor: pointer;
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: .01em;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: url('idangerous-icon.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
