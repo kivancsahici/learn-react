@@ -12,11 +12,13 @@ const TodoList = connect(mapStateToProps)(function({
   ...props /* assign any props I havent destructured on the left to a variable called props */
 }) {
   return (
-    <ul>
-      {todoItems.map(item => (
-        <li>{item}</li>
-      ))}
-    </ul>
+    <div className="todoList">
+      <ul>
+        {todoItems.map(item => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
   );
 });
 

@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+.todoList {
+  min-width: 300px;
+  width: 300px;
+  min-height: 300px;
+  height: 300px;
+  overflow-y: auto;
+}
