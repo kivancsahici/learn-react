@@ -15,7 +15,7 @@ const TodoList = connect(mapStateToProps)(function({
     <div className="todoList">
       <ul>
         {todoItems.map(item => (
-          <li>{item}</li>
+          <li key={item.key}>{item.value}</li>
         ))}
       </ul>
     </div>
