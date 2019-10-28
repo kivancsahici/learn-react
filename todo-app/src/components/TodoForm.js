@@ -42,41 +42,7 @@ const TodoForm = ({
   );
 };
 
-class _TodoForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(e) {
-    // Note: we're accessing "current" to get the DOM node
-    e.preventDefault();
-    this.props.saveTodoItem(this.state.value);
-    this.setState({ value: "" });
-  }
-
-  onChange = event => {
-    this.setState({ value: event.target.value });
-  };
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          value={this.state.value}
-          type="text"
-          placeholder="A new value"
-          onChange={this.onChange}
-        ></input>
-      </form>
-    );
-  }
-}
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(TodoForm);
-
-//export default TodoForm;

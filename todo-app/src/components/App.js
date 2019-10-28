@@ -1,11 +1,9 @@
 import React from "react";
-import logo from "../logo.svg";
 import "./App.css";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import { connect } from "react-redux";
 import * as todoActions from "../redux/actions/todoActions";
-import { statement } from "@babel/template";
 
 const mapDispatchToProps = {
   deleteTodoItem: todoActions.deleteTodoItem
@@ -13,7 +11,7 @@ const mapDispatchToProps = {
 
 function mapStatetoProps(state) {
   return {
-    disabled: state.todoItems.length == 0 ? true : false
+    disabled: state.todoItems.length === 0 ? true : false
   };
 }
 
