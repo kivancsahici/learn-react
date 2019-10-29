@@ -24,7 +24,37 @@
 .todoList {
   min-width: 300px;
   width: 300px;
-  min-height: 300px;
-  height: 300px;
+  max-height: 200px;
   overflow-y: auto;
+}
+
+li {
+  line-height: 35px;
+  list-style: none;
+  border-top: 1px solid #ededed;
+}
+
+li.completed {
+  text-decoration: line-through;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+form > input {
+  width: 296px;
+}
+
+.footer {
+  width: 300px;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer > span {
+  cursor: pointer;
 }

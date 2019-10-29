@@ -27,6 +27,11 @@ function App({ disabled, deleteTodoItem }) {
         </button>
         <TodoForm />
         <TodoList />
+        <div className="footer">
+          <span>All</span>
+          <span>Active</span>
+          <span>Completed</span>
+        </div>
       </header>
     </div>
   );
