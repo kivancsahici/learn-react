@@ -11,6 +11,13 @@ export default function todoReducer(state = initialState.todoItems, action) {
       let newArrays = state.slice();
       if (newArrays.length > 0) newArrays.pop();
       return newArrays;
+    case types.TOGGLE_TODO_ITEM:
+      let array = state.slice();
+      let item = array.find(item => item.key === action.todoItemKey);
+      item.completed === true
+        ? (item.completed = false)
+        : (item.completed = true);
+      return array;
     default:
       return state;
   }

@@ -7,3 +7,7 @@ export function saveTodoItem(item) {
 export function deleteTodoItem() {
   return { type: types.DELETE_TODO_ITEM };
 }
+
+export function toggleTodoItem(todoItemKey) {
+  return { type: types.TOGGLE_TODO_ITEM, todoItemKey };
+}
