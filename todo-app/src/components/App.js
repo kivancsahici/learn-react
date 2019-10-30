@@ -22,9 +22,6 @@ function App({ deleteTodoItem, setVisibilityFilter }) {
   const onDelete = () => {
     deleteTodoItem();
   };
-  const onVisibilityChange = e => {
-    setVisibilityFilter(e.target.id);
-  };
   return (
     <div className="App">
       <header className="App-header">
@@ -32,13 +29,9 @@ function App({ deleteTodoItem, setVisibilityFilter }) {
         <TodoForm />
         <TodoList />
         <div className="footer">
-          <span onClick={onVisibilityChange} id="SHOW_ALL">
-            All
-          </span>
-          <span onClick={onVisibilityChange} id="SHOW_ACTIVE">
-            Active
-          </span>
-          <span onClick={onVisibilityChange} id="SHOW_COMPLETED">
+          <span onClick={() => setVisibilityFilter("SHOW_ALL")}>All</span>
+          <span onClick={() => setVisibilityFilter("SHOW_ACTIVE")}>Active</span>
+          <span onClick={() => setVisibilityFilter("SHOW_COMPLETED")}>
             Completed
           </span>
         </div>
