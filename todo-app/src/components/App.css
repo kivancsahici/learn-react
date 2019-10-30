@@ -38,6 +38,10 @@ li.completed {
   text-decoration: line-through;
 }
 
+li label {
+  font-size: 18px;
+}
+
 ul {
   margin: 0;
   padding: 0;

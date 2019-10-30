@@ -21,6 +21,7 @@ const TodoList = connect(
   ...props /* assign any props I havent destructured on the left to a variable called props */
 }) {
   const handleClick = e => {
+    debugger;
     toggleTodoItem(e.currentTarget.value);
   };
   return (
@@ -29,12 +30,15 @@ const TodoList = connect(
         {todoItems.map(item => (
           <li
             key={item.key}
-            value={item.key}
-            onClick={handleClick}
             className={item.completed === true ? "completed" : "active"}
           >
-            <input type="checkbox"></input>
-            {item.value}
+            <input
+              type="checkbox"
+              id={item.key}
+              value={item.key}
+              onChange={handleClick}
+            ></input>
+            <label htmlFor={item.key}>{item.value}</label>
           </li>
         ))}
       </ul>
