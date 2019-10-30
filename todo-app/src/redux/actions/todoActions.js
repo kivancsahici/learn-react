@@ -11,3 +11,7 @@ export function deleteTodoItem() {
 export function toggleTodoItem(todoItemKey) {
   return { type: types.TOGGLE_TODO_ITEM, todoItemKey };
 }
+
+export function setVisibilityFilter(visibilityFilter) {
+  return { type: types.SET_VISIBILITY_FILTER, visibilityFilter };
+}

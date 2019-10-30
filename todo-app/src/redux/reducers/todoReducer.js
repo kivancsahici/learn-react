@@ -5,7 +5,11 @@ export default function todoReducer(state = initialState.todoItems, action) {
   switch (action.type) {
     case types.SAVE_TODO_ITEM:
       let newArray = state.slice();
-      newArray.push({ value: action.todoItem, key: newArray.length });
+      newArray.push({
+        value: action.todoItem,
+        key: newArray.length,
+        completed: false
+      });
       return newArray;
     case types.DELETE_TODO_ITEM:
       let newArrays = state.slice();

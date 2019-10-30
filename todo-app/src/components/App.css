@@ -22,8 +22,8 @@
 }
 
 .todoList {
-  min-width: 300px;
-  width: 300px;
+  min-width: 500px;
+  width: 500px;
   max-height: 200px;
   overflow-y: auto;
 }
@@ -49,11 +49,11 @@ ul {
 }
 
 form > input {
-  width: 296px;
+  width: 496px;
 }
 
 .footer {
-  width: 300px;
+  width: 500px;
   line-height: 35px;
   display: flex;
   justify-content: space-evenly;

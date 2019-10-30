@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as todoActions from "../redux/actions/todoActions";
+import { getVisibleTodos } from "../redux/selectors";
 
 const mapDispatchToProps = {
   toggleTodoItem: todoActions.toggleTodoItem
@@ -8,7 +9,7 @@ const mapDispatchToProps = {
 
 function mapStateToProps(state) {
   return {
-    todoItems: state.todoItems
+    todoItems: getVisibleTodos(state)
   };
 }
 

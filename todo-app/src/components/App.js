@@ -4,33 +4,43 @@ import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import { connect } from "react-redux";
 import * as todoActions from "../redux/actions/todoActions";
+//import { getVisibleTodos } from "../redux/selectors";
 
 const mapDispatchToProps = {
-  deleteTodoItem: todoActions.deleteTodoItem
+  deleteTodoItem: todoActions.deleteTodoItem,
+  setVisibilityFilter: todoActions.setVisibilityFilter
 };
-
+/*
 function mapStatetoProps(state) {
   return {
-    disabled: state.todoItems.length === 0 ? true : false
+    disabled: state.todoItems.length === 0 ? true : false,
+    todos: getVisibleTodos(state)
   };
-}
+}*/
 
-function App({ disabled, deleteTodoItem }) {
+function App({ deleteTodoItem, setVisibilityFilter }) {
   const onDelete = () => {
     deleteTodoItem();
+  };
+  const onVisibilityChange = e => {
+    setVisibilityFilter(e.target.id);
   };
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={onDelete} disabled={disabled}>
-          Delete
-        </button>
+        <button onClick={onDelete}>Delete</button>
         <TodoForm />
         <TodoList />
         <div className="footer">
-          <span>All</span>
-          <span>Active</span>
-          <span>Completed</span>
+          <span onClick={onVisibilityChange} id="SHOW_ALL">
+            All
+          </span>
+          <span onClick={onVisibilityChange} id="SHOW_ACTIVE">
+            Active
+          </span>
+          <span onClick={onVisibilityChange} id="SHOW_COMPLETED">
+            Completed
+          </span>
         </div>
       </header>
     </div>
@@ -40,6 +50,6 @@ function App({ disabled, deleteTodoItem }) {
 //export default App;
 
 export default connect(
-  mapStatetoProps,
+  null,
   mapDispatchToProps
 )(App);
