@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import Footer from "./Footer";
 import { connect } from "react-redux";
 import * as todoActions from "../redux/actions/todoActions";
 //import { getVisibleTodos } from "../redux/selectors";
@@ -28,13 +29,7 @@ function App({ deleteTodoItem, setVisibilityFilter }) {
         <button onClick={onDelete}>Delete</button>
         <TodoForm />
         <TodoList />
-        <div className="footer">
-          <span onClick={() => setVisibilityFilter("SHOW_ALL")}>All</span>
-          <span onClick={() => setVisibilityFilter("SHOW_ACTIVE")}>Active</span>
-          <span onClick={() => setVisibilityFilter("SHOW_COMPLETED")}>
-            Completed
-          </span>
-        </div>
+        <Footer />
       </header>
     </div>
   );

@@ -62,3 +62,7 @@ form > input {
 .footer > span {
   cursor: pointer;
 }
+
+.footer > span.active {
+  border: 1px solid orange;
+}
