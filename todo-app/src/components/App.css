@@ -56,13 +56,33 @@ form > input {
   width: 500px;
   line-height: 35px;
   display: flex;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.footer > .itemsLeft,
+.footer > .clearCompleted {
+  width: 22%;
+}
+
+.footer > .filters {
+  width: 46%;
+  padding: 0 5% 0 5%;
+  display: flex;
   justify-content: space-evenly;
 }
 
-.footer > span {
+.footer > .filters,
+.footer > .clearCompleted {
   cursor: pointer;
 }
 
-.footer > span.active {
+.footer > .filters > span {
+  border: 1px solid transparent;
+}
+
+.footer > .filters > span.active {
   border: 1px solid orange;
+}
+
+.footer > .filters > span:hover {
+  border: 1px solid lightgray;
 }

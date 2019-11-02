@@ -38,6 +38,7 @@ const TodoList = connect(
               id={item.key}
               value={item.key}
               onChange={handleClick}
+              checked={item.completed}
             ></input>
             <label htmlFor={item.key}>{item.value}</label>
           </li>
