@@ -11,8 +11,8 @@ describe("actions", () => {
     expect(actions.saveTodoItem(todoItemText)).toEqual(expectedAction);
   });
 
-  it("should create an action to remove a todo", () => {
-    const expectedAction = { type: types.DELETE_TODO_ITEM };
-    expect(actions.deleteTodoItem()).toEqual(expectedAction);
+  it("should create an action to remove todos that are completed", () => {
+    const expectedAction = { type: types.CLEAR_COMPLETED };
+    expect(actions.clearCompleted()).toEqual(expectedAction);
   });
 });

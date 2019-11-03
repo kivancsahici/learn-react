@@ -1,11 +1,10 @@
-import * as actions from "../actions/todoActions";
 import * as types from "../actions/ActionTypes";
 import reducer from "../reducers/todoReducer";
 
 describe("reducers", () => {
   it("should return the initial state", () => {
     expect(reducer(undefined, {})).toEqual([
-      { key: 0, value: "my first task" }
+      { completed: true, key: 0, value: "my first task" }
     ]);
   });
 
@@ -17,6 +16,7 @@ describe("reducers", () => {
       })
     ).toEqual([
       {
+        completed: false,
         key: 0,
         value: "Run the tests"
       }
@@ -26,6 +26,7 @@ describe("reducers", () => {
       reducer(
         [
           {
+            completed: false,
             key: 0,
             value: "Use Redux"
           }
@@ -37,29 +38,43 @@ describe("reducers", () => {
       )
     ).toEqual([
       {
+        completed: false,
         key: 0,
         value: "Use Redux"
       },
       {
+        completed: false,
         key: 1,
         value: "Run the tests"
       }
     ]);
   });
 
-  it("should handle DELETE_TODO_ITEM", () => {
+  it("should handle CLEAR_COMPLETED", () => {
     expect(
       reducer(
         [
           {
+            completed: true,
             key: 0,
             value: "Use Redux"
+          },
+          {
+            completed: false,
+            key: 1,
+            value: "Use Selectors"
           }
         ],
         {
-          type: types.DELETE_TODO_ITEM
+          type: types.CLEAR_COMPLETED
         }
       )
-    ).toEqual([]);
+    ).toEqual([
+      {
+        completed: false,
+        key: 1,
+        value: "Use Selectors"
+      }
+    ]);
   });
 });
