@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import * as todoActions from "../redux/actions/todoActions";
-
-const getItemsLeft = state => {
-  return state.todoItems.filter(t => !t.completed).length;
-};
+import { getItemsLeft } from "../redux/selectors";
 
 const mapDispatchToProps = {
   setVisibilityFilter: todoActions.setVisibilityFilter,

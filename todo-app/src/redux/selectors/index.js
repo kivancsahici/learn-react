@@ -17,3 +17,10 @@ export const getVisibleTodos = createSelector(
     }
   }
 );
+
+export const getItemsLeft = createSelector(
+  [getTodos],
+  todos => {
+    return todos.filter(t => !t.completed).length;
+  }
+);
