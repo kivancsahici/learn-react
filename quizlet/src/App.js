@@ -1,66 +1,56 @@
 import React, { useState } from "react";
 import "./App.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowCircleLeft,
-  faArrowCircleRight
-} from "@fortawesome/free-solid-svg-icons";
+import Swiper from "react-id-swiper";
+import "swiper/css/swiper.css";
 
 function SocialCard(props) {
-  const [index, setCount] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
 
-  const handleNext = e => {
+  const onSlideChange = e => {
     setShowTranslation(false);
-    setCount(index + 1);
   };
-  const handlePrevious = e => {
-    setShowTranslation(false);
-    setCount(index - 1);
+
+  const params = {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    on: {
+      slideChange: onSlideChange
+    },
+    spaceBetween: 30
   };
+
   const displayTranslation = e => {
     setShowTranslation(true);
   };
+
   return (
-    <>
-      <div className="flex-container">
-        <div className="row">
-          <p className="TweetTextSize" onClick={displayTranslation}>
-            {props.text[index].dutch}
-          </p>
-        </div>
-        <div className="row">
-          <p
-            className={
-              showTranslation === true ? "translation fadeIn" : "translation"
-            }
-          >
-            {props.text[index].engels}
-          </p>
-        </div>
-      </div>
-      <div className="footer">
-        <div className="row footer">
-          <div className="icons">
-            <button
-              disabled={index === 0 ? true : false}
-              onClick={handlePrevious}
+    <Swiper {...params}>
+      {props.text.map((item, key) => (
+        <div className="slide">
+          <div className="row">
+            <p className="TweetTextSize" onClick={displayTranslation}>
+              {item.dutch}
+            </p>
+          </div>
+          <div className="row">
+            <p
+              className={
+                showTranslation === true ? "translation fadeIn" : "translation"
+              }
             >
-              <FontAwesomeIcon icon={faArrowCircleLeft} />
-            </button>
-            <span>
-              {index + 1}/{props.text.length}
-            </span>
-            <button
-              disabled={index === props.text.length - 1 ? true : false}
-              onClick={handleNext}
-            >
-              <FontAwesomeIcon icon={faArrowCircleRight} />
-            </button>
+              {item.engels}
+            </p>
           </div>
         </div>
-      </div>
-    </>
+      ))}
+    </Swiper>
   );
 }
 

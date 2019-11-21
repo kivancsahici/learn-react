@@ -115,3 +115,11 @@ p.translation.fadeIn {
   line-height: 32px;
   letter-spacing: 0.01em;
 }
+
+.swiper-slide {
+  height: 300px !important;
+  /*align-items: center;*/
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
